@@ -1,0 +1,74 @@
+﻿[
+  {
+    "name": "Apple iPad Air 2 Wifi/4G 16G",
+    "price": 499,
+    "description": "Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay",
+    "inStock": true,
+    "images": 
+      {
+        "full": "images/ipad.png",
+        "thumb": "images/ipad.png"
+      }
+    ,
+    "reviews": [
+      {
+        "stars": 5,
+        "body": "I love this product!",
+        "author": "NguyenThanhTung"
+      },
+      {
+        "stars": 1,
+        "body": "This product are bad",
+        "author": "Nguyen Thanh Tung"
+      }
+    ]
+  },
+  {
+    "name": "Apple iPad Air 2 Wifi/4G 64G",
+    "price": 499,
+    "description": "Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay",
+    "inStock": true,
+    "images": 
+      {
+        "full": "images/ipad.png",
+        "thumb": "images/ipad.png"
+      }
+    ,
+    "reviews": [
+      {
+        "stars": 5,
+        "body": "I love this product!",
+        "author": "NguyenThanhTung"
+      },
+      {
+        "stars": 1,
+        "body": "This product are bad",
+        "author": "Nguyen Thanh Tung"
+      }
+    ]
+  },
+  {
+    "name": "Apple iPad Air 2 Wifi/4G 128G",
+    "price": 499,
+    "description": "Một bước ngoặt trong thiết kế của Apple  vừa tinh tế, vừa sang trọng và thời thượng và những cải tiến đáng giá. Apple iPad Air 2 ra mắt là chiếc máy tính bảng 9.7 inch mỏng và nhẹ nhất hiện nay",
+    "inStock": true,
+    "images": 
+      {
+        "full": "images/ipad.png",
+        "thumb": "images/ipad.png"
+      }
+    ,
+    "reviews": [
+      {
+        "stars": 5,
+        "body": "I love this product!",
+        "author": "NguyenThanhTung"
+      },
+      {
+        "stars": 1,
+        "body": "This product are bad",
+        "author": "Nguyen Thanh Tung"
+      }
+    ]
+  }
+]
