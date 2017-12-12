@@ -1,1 +1,2 @@
-<button class="btn btn-primary" ng-show="product.inStock">Thêm vào giỏ</button>
+<button ng-controller="productsCart" class="btn btn-primary" ng-show="product.inStock" ng-click="addtoCart(product)">Thêm vào giỏ</button>
+

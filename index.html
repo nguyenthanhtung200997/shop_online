@@ -1,85 +1,72 @@
 <!DOCTYPE html>
-<html ng-app="store">
+<html ng-app="storeRoute">
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>ShopOnline</title>
 
     <!-- Vendor -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <!-- Application -->
+    <script src="app.js"></script>
+    <script src="cart.js"></script>
+    <script src="products.js"></script>
+    <script src="checkoutController.js"></script>
+
+    <script type="text/javascript">
+        var app = angular.module("storeRoute", ["store","cart","ngRoute"]);
+        app.config(function ($routeProvider) {
+            
+            $routeProvider.when("/complete", {
+                templateUrl: "/thankYou.html"
+            });
+            $routeProvider.when("/ipad", {
+                templateUrl: "/ipad.html",
+            });
+            $routeProvider.when("/iphone", {
+                templateUrl: "/iphone.html",
+            });
+            $routeProvider.when("/macbook", {
+                templateUrl: "/macbook.html",
+            });
+
+            $routeProvider.when("/checkout", {
+                templateUrl: "/checkoutSummary.html"
+            });
+
+            $routeProvider.when("/placeorder", {
+                templateUrl: "/placeOrder.html"
+            });
+
+            $routeProvider.otherwise({
+                redirectTo: "/iphone"
+            });
+        });
+    </script>
+    <!-- Vendor -->
+
 </head>
+
 <body>
 
-<div class="container">
-    <div class="page-header">
-        <h1>Apple Shop Online</h1>
+    <div class="container">
+        <div class="page-header">
+            <h1>Apple Shop Online</h1>
+            <cart-summary></cart-summary>
+        </div>
+        <a href="/#!/ipad">Ipad</a>
+        <a href="/#!/iphone">Iphone</a>
+        <a href="/#!/macbook">MB</a>
+        
+        
+        <div ng-view></div>
+
     </div>
-    <div class="tab">
-        <button class="tablinks" onclick="openTab(event, 'ipad')" id="defaultOpen">Ipad</button>
-        <button class="tablinks" onclick="openTab(event, 'iphone')">Iphone</button>
-        <button class="tablinks" onclick="openTab(event, 'mb')">Macbook</button>
-    </div>
-      
-      <div id="ipad" class="tabcontent">
-
-        <div class="panel panel-default" ng-controller="StoreControllerIPad as store">
-            <div class="panel-body" ng-repeat="product in store.products">
-                <h1>
-                    <product-title></product-title>
-                </h1>
-    
-                <product-galery></product-galery>
-    
-                <product-buy-button></product-buy-button>
-    
-                <hr>
-                <product-panels></product-panels>
-            </div>
-        </div>
-      </div>
-      
-      <div id="iphone" class="tabcontent">
-        <div class="panel panel-default" ng-controller="StoreControllerIPhone as store">
-            <div class="panel-body" ng-repeat="product in store.products">
-                <h1>
-                    <product-title></product-title>
-                </h1>
-    
-                <product-galery></product-galery>
-    
-                <product-buy-button></product-buy-button>
-    
-                <hr>
-                <product-panels></product-panels>
-            </div>
-        </div>
-      </div>
-      
-      <div id="mb" class="tabcontent">
-        <div class="panel panel-default" ng-controller="StoreControllerMB as store">
-            <div class="panel-body" ng-repeat="product in store.products">
-                <h1>
-                    <product-title></product-title>
-                </h1>
-    
-                <product-galery></product-galery>
-    
-                <product-buy-button></product-buy-button>
-    
-                <hr>
-                <product-panels></product-panels>
-            </div>
-        </div>
-      </div>
-    
-</div>
-
-<!-- Vendor -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
-
-<!-- Application -->
-<script src="tab.js"></script>
-<script src="app.js"></script>
-<script src="products.js"></script>
 </body>
+
 </html>

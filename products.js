@@ -1,6 +1,5 @@
 
-(function() {
-    var app = angular.module('store-products', []);
+    var app = angular.module('store-products', ['cart']);
 
     app.directive('productTitle', function(){
         return {
@@ -42,4 +41,8 @@
         };
     });
 
-})();
+    app.controller('productsCart', function($scope, cart){
+        $scope.addtoCart = function (product) {
+                cart.addProduct(product.name, product.price);
+            }
+    });

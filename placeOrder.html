@@ -1,0 +1,67 @@
+<style>
+    .ng-invalid { background-color: lightpink; }
+    .ng-valid { background-color: lightgreen; }
+    span.error { color: red; font-weight: bold; }
+</style>
+
+<script>
+    $(document.body).append(form);
+</script>
+
+<h2>Mời bạn thanh toán tiền</h2>
+<p>Vui lòng điền thông tin của bạn tại đây</p>
+
+<form name="shippingForm" novalidate>
+    <div class="well">
+        <h3>Địa điểm ship</h3>
+        <div class="form-group">
+            <label>Tên</label>
+            <input name="name" class="form-control"
+                   ng-model="data.shipping.name" required />
+            <span class="error" ng-show="shippingForm.name.$error.required">
+                Vui lòng điền tên của bạn
+            </span>
+
+        </div>
+
+        <h3>Địa chỉ</h3>
+
+        <div class="form-group">
+            <label>Đường</label>
+            <input name="street" class="form-control"
+                   ng-model="data.shipping.street" required />
+            <span class="error" ng-show="shippingForm.street.$error.required">
+                Vui lòng điền tên đường
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label>Thành phố</label>
+            <input name="city" class="form-control"
+                   ng-model="data.shipping.city" required />
+            <span class="error" ng-show="shippingForm.city.$error.required">
+                Vui lòng điền tên thành phố nơi bạn đang sống
+            </span>
+        </div>
+
+
+        <h3>Options</h3>
+        <div class="checkbox">
+            <label>
+                <input name="giftwrap" type="checkbox"
+                       ng-model="data.shipping.giftwrap" />
+                Gift wrap these items
+            </label>
+        </div>
+
+        <div ng-controller="sendorder" class="text-center">
+            <a href="/#!/complete"><button ng-disabled="shippingForm.$invalid"
+                    ng-click="sendOrder(data.shipping)"
+                    class="btn btn-primary">
+                    Hoàn tất
+            </button></a>
+        </div>
+    </div>
+</form>
+
+
